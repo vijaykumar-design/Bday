@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Happy Birthday Niki </title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Great+Vibes&family=DM+Sans:wght@400;500&display=swap');
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#100810;color:#fff7f2;font-family:"DM Sans",sans-serif;text-align:center}
+section{min-height:100vh;display:grid;place-items:center;padding:50px 20px;background:radial-gradient(circle at 50% 20%,#351625,#100810 60%)}
+.kicker{letter-spacing:.3em;text-transform:uppercase;color:#e7c486;font-size:11px}h1{font:500 clamp(55px,11vw,125px)/.8 "Cormorant Garamond";margin:25px 0}h1 span,h2{color:#f3a9bc;font-family:"Great Vibes"}p{color:#cdbbc3;line-height:1.8}.hint{margin-top:60px;color:#f3a9bc;animation:bob 1.5s infinite}@keyframes bob{50%{transform:translateY(8px)}}
+#giftSection{min-height:115vh}.wrap{max-width:900px;width:100%}h2{font-size:65px;font-weight:400;margin:12px}.giftArea{height:390px;display:grid;place-items:center}.gift{position:relative;width:230px;height:165px;margin-top:80px;cursor:pointer}.box{position:absolute;bottom:0;width:230px;height:140px;border-radius:8px;background:linear-gradient(135deg,#8e2851,#dd6687)}.box:after,.lid:after{content:"";position:absolute;left:98px;top:0;width:34px;height:100%;background:#f6cad4}.lid{position:absolute;z-index:3;left:-12px;top:-18px;width:254px;height:48px;border-radius:8px;background:#c34c72;transition:1.1s}.gift.open .lid{transform:translate(35px,-100px) rotate(12deg)}.bow{position:absolute;z-index:5;left:88px;top:-55px;font-size:45px;color:#ffd5df;transition:1.1s}.bow:before{content:"🎀"}.gift.open .bow{transform:translate(35px,-100px) rotate(12deg)}.prompt{font:28px "Great Vibes";color:#f3a9bc}
+#balloons{display:none;min-height:115vh;padding-top:90px}.balloonField{position:relative;height:600px;max-width:1000px;margin:25px auto}.balloon{position:absolute;width:85px;height:108px;border:0;border-radius:50%;cursor:pointer;box-shadow:inset -12px -15px 20px #0002,0 15px 25px #0005;animation:float 4s ease-in-out infinite}.balloon:after{content:"";position:absolute;top:104px;left:42px;height:115px;width:1px;background:#ffffff77}.balloon.popping{animation:pop .35s forwards}@keyframes float{50%{transform:translateY(-22px) rotate(3deg)}}@keyframes pop{100%{transform:scale(0);opacity:0}}
+#modal{position:fixed;inset:0;z-index:20;display:none;place-items:center;background:#090509cc;backdrop-filter:blur(10px);padding:20px}.card{max-width:550px;padding:45px 30px;border:1px solid #f3a9bc55;border-radius:28px;background:#21121d}.card h3{font:50px "Great Vibes";color:#f3a9bc;margin:10px}.card p{font:23px "Cormorant Garamond";line-height:1.6}.card button{border:1px solid #fff4;background:none;color:white;border-radius:30px;padding:11px 22px}.show{display:grid!important}
+#cake{display:none}.cake{position:relative;width:280px;height:190px;margin:50px auto}.base{position:absolute;bottom:0;width:280px;height:105px;border-radius:12px 12px 25px 25px;background:linear-gradient(#f8cbd5,#e99bab)}.top{position:absolute;top:45px;left:10px;width:260px;height:60px;border-radius:50%;background:#fff0e7}.candle{position:absolute;z-index:2;bottom:100px;left:130px;width:20px;height:75px;background:repeating-linear-gradient(45deg,#f5a7ba 0 8px,#fff 8px 16px)}.flame{position:absolute;top:-28px;left:3px;width:15px;height:24px;background:#ffd27c;border-radius:50%;box-shadow:0 0 20px #ffb24d;animation:flick .7s infinite}@keyframes flick{50%{transform:scale(1.2)}}
+#memories{padding:100px 20px;min-height:100vh}.photos{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;max-width:1000px;margin:auto}.photo{height:300px;border-radius:20px;overflow:hidden;background:#251520}.photo img,.photo video{width:100%;height:100%;object-fit:cover}
+@media(max-width:700px){.photos{grid-template-columns:1fr 1fr}.photo{height:220px}.balloon{width:70px;height:90px}.balloon:after{top:87px}}
+</style>
+</head>
+<body>
+<section id="opening"><div><div class="kicker">A little surprise, made only for you</div><h1>Happy Birthday<br><span>Niki ♡</span></h1><p>I made this little corner of the internet because an ordinary birthday wish wasn't special enough for you.</p><div class="hint">Scroll down to begin ↓</div></div></section>
+
+<section id="giftSection"><div class="wrap"><div class="kicker">There is something waiting for you</div><h2>One little gift...</h2><p>Keep scrolling. The surprise begins when the box opens.</p><div class="giftArea"><div class="gift" id="gift"><div class="bow"></div><div class="lid"></div><div class="box"></div></div></div><div class="prompt">Something beautiful is about to happen...</div></div></section>
+
+<section id="balloons"><div class="wrap"><div class="kicker">A message in every balloon</div><h2>Pop them one by one ♡</h2><p>Tap each balloon to reveal a little message from me.</p><div class="balloonField" id="field"></div><p id="count">0 / 8 popped</p></div></section>
+
+<div id="modal"><div class="card"><div style="font-size:30px;color:#f3a9bc">♡</div><h3 id="mt"></h3><p id="mx"></p><button onclick="modal.classList.remove('show')">Continue</button></div></div>
+
+<section id="cake"><div><div class="kicker">You popped them all...</div><h2>Your Birthday Cake ♡</h2><p>Make a wish, Niki.</p><div class="cake"><div class="candle"><div class="flame"></div></div><div class="top"></div><div class="base"></div></div><p style="font:28px 'Cormorant Garamond';max-width:600px">And here's to another year of laughter, adventures and beautiful memories together. ❤️</p></div></section>
+
+<section id="memories"><div class="wrap"><div class="kicker">After the surprise</div><h2>Our Memories</h2><div class="photos">
+<div class="photo"><img src="media/photo1.jpg"></div><div class="photo"><img src="media/photo2.jpg"></div><div class="photo"><img src="media/photo3.jpg"></div><div class="photo"><img src="media/photo4.jpg"></div><div class="photo"><video controls playsinline><source src="media/video1.mp4"></video></div><div class="photo"><img src="media/photo5.jpg"></div>
+</div></div></section>
+
+<script>
+const msgs=[
+["My Favourite Smile","Your smile is one of my favourite things in this entire world."],
+["My Safe Place","No matter where life takes us, being with you always feels like home."],
+["My Best Adventure","Every adventure is better because you're beside me."],
+["My Beautiful Girl","You make beautiful things look even more beautiful simply by being you."],
+["My Happiness","Thank you for bringing so much laughter and warmth into my life."],
+["My Forever","If I could choose again, in every lifetime, I'd still choose you."],
+["One More Thing...","You deserve to be celebrated today and every day after this."],
+["I Love You","More than these words can ever say. Happy birthday Niki. ❤️"]
+];
+const gift=document.getElementById("gift"),bs=document.getElementById("balloons"),cake=document.getElementById("cake"),field=document.getElementById("field"),modal=document.getElementById("modal");
+let opened=false,popped=0;
+new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting&&!opened){opened=true;gift.classList.add("open");setTimeout(()=>{bs.classList.add("show");createBalloons();bs.scrollIntoView({behavior:"smooth"})},1000)}}),{threshold:.65}).observe(document.getElementById("giftSection"));
+function createBalloons(){
+const pos=[[8,10],[25,2],[43,14],[62,3],[80,12],[15,53],[47,55],[76,52]];
+msgs.forEach((m,i)=>{let b=document.createElement("button");b.className="balloon";b.style.left=pos[i][0]+"%";b.style.top=pos[i][1]+"%";b.style.background=["#ed94ad","#c99be8","#efb46f","#91c9dc","#ef9b9b","#b99be0","#e5b7ca","#e8c486"][i];b.style.animationDelay=(-i*.3)+"s";b.onclick=()=>{if(b.classList.contains("popping"))return;b.classList.add("popping");popped++;document.getElementById("count").textContent=popped+" / 8 popped";document.getElementById("mt").textContent=m[0];document.getElementById("mx").textContent=m[1];modal.classList.add("show");setTimeout(()=>b.remove(),350);if(popped===8)setTimeout(()=>{cake.classList.add("show");cake.scrollIntoView({behavior:"smooth"})},1400)};field.appendChild(b)})
+}
+</script>
+</body></html>
