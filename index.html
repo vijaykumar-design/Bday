@@ -1,13 +1,22 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Happy Birthday Niki </title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Happy Birthday Niki</title>
+
 <style>
+
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Great+Vibes&family=DM+Sans:wght@400;500&display=swap');
 
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
+*{
+  box-sizing:border-box
+}
+
+html{
+  scroll-behavior:smooth
+}
 
 body{
   margin:0;
@@ -22,7 +31,11 @@ section{
   display:grid;
   place-items:center;
   padding:50px 20px;
-  background:radial-gradient(circle at 50% 20%,#351625,#100810 60%)
+  background:radial-gradient(
+    circle at 50% 20%,
+    #351625,
+    #100810 60%
+  )
 }
 
 .kicker{
@@ -37,7 +50,8 @@ h1{
   margin:25px 0
 }
 
-h1 span,h2{
+h1 span,
+h2{
   color:#f3a9bc;
   font-family:"Great Vibes"
 }
@@ -54,8 +68,15 @@ p{
 }
 
 @keyframes bob{
-  50%{transform:translateY(8px)}
+  50%{
+    transform:translateY(8px)
+  }
 }
+
+
+/* =========================
+   GIFT SECTION
+========================= */
 
 #giftSection{
   min-height:115vh
@@ -92,10 +113,15 @@ h2{
   width:230px;
   height:140px;
   border-radius:8px;
-  background:linear-gradient(135deg,#8e2851,#dd6687)
+  background:linear-gradient(
+    135deg,
+    #8e2851,
+    #dd6687
+  )
 }
 
-.box:after,.lid:after{
+.box:after,
+.lid:after{
   content:"";
   position:absolute;
   left:98px;
@@ -144,6 +170,11 @@ h2{
   color:#f3a9bc
 }
 
+
+/* =========================
+   BALLOONS
+========================= */
+
 #balloons{
   display:none;
   min-height:115vh;
@@ -164,7 +195,11 @@ h2{
   border:0;
   border-radius:50%;
   cursor:pointer;
-  box-shadow:inset -12px -15px 20px #0002,0 15px 25px #0005;
+
+  box-shadow:
+    inset -12px -15px 20px #0002,
+    0 15px 25px #0005;
+
   animation:float 4s ease-in-out infinite
 }
 
@@ -183,15 +218,28 @@ h2{
 }
 
 @keyframes float{
-  50%{transform:translateY(-22px) rotate(3deg)}
+
+  50%{
+    transform:
+      translateY(-22px)
+      rotate(3deg)
+  }
+
 }
 
 @keyframes pop{
+
   100%{
     transform:scale(0);
     opacity:0
   }
+
 }
+
+
+/* =========================
+   MESSAGE MODAL
+========================= */
 
 #modal{
   position:fixed;
@@ -199,17 +247,27 @@ h2{
   z-index:20;
   display:none;
   place-items:center;
+
   background:#090509cc;
+
   backdrop-filter:blur(10px);
+
   padding:20px
 }
 
 .card{
   max-width:550px;
+
   padding:45px 30px;
+
   border:1px solid #f3a9bc55;
+
   border-radius:28px;
-  background:#21121d
+
+  background:#21121d;
+
+  box-shadow:
+    0 20px 60px #0008;
 }
 
 .card h3{
@@ -228,74 +286,401 @@ h2{
   background:none;
   color:white;
   border-radius:30px;
-  padding:11px 22px
+  padding:11px 22px;
+  cursor:pointer;
+  transition:.3s
+}
+
+.card button:hover{
+  background:#f3a9bc22;
+  transform:scale(1.05)
 }
 
 .show{
   display:grid!important
 }
 
+
+/* =========================
+   FINAL CAKE SECTION
+========================= */
+
 #cake{
-  display:none
+  display:none;
+  position:relative;
+  overflow:hidden;
+  min-height:100vh;
+
+  background:
+    radial-gradient(
+      circle at 50% 30%,
+      #54243b,
+      #21111d 45%,
+      #100810 100%
+    )
 }
+
+#cake.show{
+  display:grid!important
+}
+
+.cake-content{
+  position:relative;
+  z-index:3;
+  max-width:800px;
+  width:100%
+}
+
+
+/* Final small heading */
+
+.final-kicker{
+  letter-spacing:.35em;
+  text-transform:uppercase;
+  color:#e7c486;
+  font-size:11px;
+
+  opacity:0;
+
+  animation:
+    fadeUp 1s ease forwards
+}
+
+
+/* Happy Birthday title */
+
+.final-title{
+  font:
+    500 clamp(55px,11vw,110px)/.9
+    "Great Vibes";
+
+  color:#f3a9bc;
+
+  margin:20px 0;
+
+  opacity:0;
+
+  animation:
+    fadeUp 1s .4s ease forwards;
+
+  text-shadow:
+    0 0 25px #f3a9bc55
+}
+
+
+/* Cake subtitle */
+
+.final-subtitle{
+  font:
+    26px
+    "Cormorant Garamond";
+
+  color:#fff7f2;
+
+  margin:10px auto 35px;
+
+  opacity:0;
+
+  animation:
+    fadeUp 1s .8s ease forwards
+}
+
+
+/* Cake */
 
 .cake{
   position:relative;
   width:280px;
   height:190px;
-  margin:50px auto
+
+  margin:45px auto 20px;
+
+  opacity:0;
+
+  animation:
+    cakeAppear 1.2s 1s ease forwards
 }
 
 .base{
   position:absolute;
+
   bottom:0;
+
   width:280px;
   height:105px;
-  border-radius:12px 12px 25px 25px;
-  background:linear-gradient(#f8cbd5,#e99bab)
+
+  border-radius:
+    12px
+    12px
+    25px
+    25px;
+
+  background:
+    linear-gradient(
+      #f8cbd5,
+      #e99bab
+    );
+
+  box-shadow:
+    0 15px 40px #0005
 }
 
 .top{
   position:absolute;
+
   top:45px;
   left:10px;
+
   width:260px;
   height:60px;
+
   border-radius:50%;
+
   background:#fff0e7
 }
 
+
+/* Candle */
+
 .candle{
   position:absolute;
+
   z-index:2;
+
   bottom:100px;
   left:130px;
+
   width:20px;
   height:75px;
-  background:repeating-linear-gradient(
-    45deg,
-    #f5a7ba 0 8px,
-    #fff 8px 16px
-  )
+
+  background:
+    repeating-linear-gradient(
+      45deg,
+      #f5a7ba 0 8px,
+      #fff 8px 16px
+    )
 }
+
+
+/* Flame */
 
 .flame{
   position:absolute;
+
   top:-28px;
   left:3px;
+
   width:15px;
   height:24px;
+
   background:#ffd27c;
+
   border-radius:50%;
-  box-shadow:0 0 20px #ffb24d;
+
+  box-shadow:
+    0 0 20px #ffb24d,
+    0 0 40px #ffb24d55;
+
   animation:flick .7s infinite
 }
 
 @keyframes flick{
-  50%{transform:scale(1.2)}
+
+  50%{
+
+    transform:scale(1.2);
+
+    box-shadow:
+      0 0 30px #ffb24d,
+      0 0 50px #ffb24d55;
+
+  }
+
 }
 
+
+/* Final birthday message */
+
+.final-message{
+
+  max-width:680px;
+
+  margin:30px auto;
+
+  font:
+    23px/1.7
+    "Cormorant Garamond";
+
+  color:#e8d8df;
+
+  opacity:0;
+
+  animation:
+    fadeUp 1.2s 1.2s ease forwards
+}
+
+
+/* Final sign */
+
+.final-sign{
+
+  font:
+    32px
+    "Great Vibes";
+
+  color:#f3a9bc;
+
+  margin-top:30px;
+
+  opacity:0;
+
+  animation:
+    fadeUp 1s 1.8s ease forwards
+}
+
+
+/* =========================
+   FINAL ANIMATIONS
+========================= */
+
+@keyframes fadeUp{
+
+  from{
+    opacity:0;
+    transform:translateY(25px)
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0)
+  }
+
+}
+
+@keyframes cakeAppear{
+
+  from{
+    opacity:0;
+    transform:
+      translateY(30px)
+      scale(.85)
+  }
+
+  to{
+    opacity:1;
+    transform:
+      translateY(0)
+      scale(1)
+  }
+
+}
+
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
+.heart{
+  position:absolute;
+
+  bottom:-30px;
+
+  color:#f3a9bc;
+
+  font-size:20px;
+
+  opacity:0;
+
+  animation:
+    heartFloat
+    linear
+    infinite;
+
+  z-index:1
+}
+
+@keyframes heartFloat{
+
+  0%{
+
+    transform:
+      translateY(0)
+      scale(.7)
+      rotate(0deg);
+
+    opacity:0
+
+  }
+
+  15%{
+    opacity:.7
+  }
+
+  80%{
+    opacity:.5
+  }
+
+  100%{
+
+    transform:
+      translateY(-110vh)
+      scale(1.2)
+      rotate(25deg);
+
+    opacity:0
+
+  }
+
+}
+
+
+/* =========================
+   SPARKLES
+========================= */
+
+.sparkle{
+  position:absolute;
+
+  width:5px;
+  height:5px;
+
+  border-radius:50%;
+
+  background:#f3a9bc;
+
+  box-shadow:
+    0 0 12px #f3a9bc;
+
+  animation:
+    sparkle
+    2s
+    ease-in-out
+    infinite;
+
+  opacity:.5
+}
+
+@keyframes sparkle{
+
+  0%,100%{
+    opacity:.15;
+    transform:scale(.5)
+  }
+
+  50%{
+    opacity:1;
+    transform:scale(1.5)
+  }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
 @media(max-width:700px){
+
   .balloon{
     width:70px;
     height:90px
@@ -304,15 +689,52 @@ h2{
   .balloon:after{
     top:87px
   }
+
+  .balloonField{
+    height:560px
+  }
+
+  .card{
+    padding:35px 22px
+  }
+
+  .card h3{
+    font-size:42px
+  }
+
+  .card p{
+    font-size:21px
+  }
+
+  .final-message{
+    font-size:21px;
+    padding:0 10px
+  }
+
+  .final-sign{
+    font-size:28px
+  }
+
 }
+
 </style>
 </head>
 
+
 <body>
 
+
+<!-- =========================
+     OPENING
+========================= -->
+
 <section id="opening">
+
   <div>
-    <div class="kicker">A little surprise, made only for you</div>
+
+    <div class="kicker">
+      A little surprise, made only for you
+    </div>
 
     <h1>
       Happy Birthday<br>
@@ -320,35 +742,51 @@ h2{
     </h1>
 
     <p>
-      I made this little corner of the internet because an ordinary birthday wish wasn't special enough for you.
+      I made this little corner of the internet because an ordinary
+      birthday wish wasn't special enough for you.
     </p>
 
     <div class="hint">
       Scroll down to begin ↓
     </div>
+
   </div>
+
 </section>
 
 
+<!-- =========================
+     GIFT
+========================= -->
+
 <section id="giftSection">
+
   <div class="wrap">
 
     <div class="kicker">
       There is something waiting for you
     </div>
 
-    <h2>One little gift...</h2>
+    <h2>
+      One little gift...
+    </h2>
 
     <p>
       Keep scrolling. The surprise begins when the box opens.
     </p>
 
     <div class="giftArea">
+
       <div class="gift" id="gift">
+
         <div class="bow"></div>
+
         <div class="lid"></div>
+
         <div class="box"></div>
+
       </div>
+
     </div>
 
     <div class="prompt">
@@ -356,36 +794,57 @@ h2{
     </div>
 
   </div>
+
 </section>
 
 
+<!-- =========================
+     BALLOONS
+========================= -->
+
 <section id="balloons">
+
   <div class="wrap">
 
     <div class="kicker">
       A message in every balloon
     </div>
 
-    <h2>Pop them one by one ♡</h2>
+    <h2>
+      Pop them one by one ♡
+    </h2>
 
     <p>
       Tap each balloon to reveal a little message from me.
     </p>
 
-    <div class="balloonField" id="field"></div>
+    <div
+      class="balloonField"
+      id="field">
+    </div>
 
     <p id="count">
       0 / 8 popped
     </p>
 
   </div>
+
 </section>
 
 
+<!-- =========================
+     MESSAGE POPUP
+========================= -->
+
 <div id="modal">
+
   <div class="card">
 
-    <div style="font-size:30px;color:#f3a9bc">
+    <div
+      style="
+        font-size:30px;
+        color:#f3a9bc
+      ">
       ♡
     </div>
 
@@ -393,105 +852,341 @@ h2{
 
     <p id="mx"></p>
 
-    <button onclick="modal.classList.remove('show')">
+    <button
+      onclick="modal.classList.remove('show')">
       Continue
     </button>
 
   </div>
+
 </div>
 
 
-<section id="cake">
-  <div>
+<!-- =========================
+     FINAL BIRTHDAY SECTION
+========================= -->
 
-    <div class="kicker">
+<section id="cake">
+
+
+  <!-- Floating Hearts -->
+
+  <div
+    class="heart"
+    style="
+      left:8%;
+      animation-duration:8s;
+      animation-delay:0s;
+    ">
+    ♡
+  </div>
+
+  <div
+    class="heart"
+    style="
+      left:18%;
+      animation-duration:11s;
+      animation-delay:2s;
+    ">
+    ♥
+  </div>
+
+  <div
+    class="heart"
+    style="
+      left:32%;
+      animation-duration:9s;
+      animation-delay:4s;
+    ">
+    ♡
+  </div>
+
+  <div
+    class="heart"
+    style="
+      left:50%;
+      animation-duration:12s;
+      animation-delay:1s;
+    ">
+    ♥
+  </div>
+
+  <div
+    class="heart"
+    style="
+      left:67%;
+      animation-duration:10s;
+      animation-delay:3s;
+    ">
+    ♡
+  </div>
+
+  <div
+    class="heart"
+    style="
+      left:82%;
+      animation-duration:9s;
+      animation-delay:5s;
+    ">
+    ♥
+  </div>
+
+  <div
+    class="heart"
+    style="
+      left:92%;
+      animation-duration:12s;
+      animation-delay:1s;
+    ">
+    ♡
+  </div>
+
+
+  <!-- Sparkles -->
+
+  <div
+    class="sparkle"
+    style="
+      left:15%;
+      top:20%;
+    ">
+  </div>
+
+  <div
+    class="sparkle"
+    style="
+      left:27%;
+      top:35%;
+      animation-delay:.7s;
+    ">
+  </div>
+
+  <div
+    class="sparkle"
+    style="
+      left:73%;
+      top:25%;
+      animation-delay:1.2s;
+    ">
+  </div>
+
+  <div
+    class="sparkle"
+    style="
+      left:85%;
+      top:45%;
+      animation-delay:.4s;
+    ">
+  </div>
+
+  <div
+    class="sparkle"
+    style="
+      left:10%;
+      top:65%;
+      animation-delay:1.5s;
+    ">
+  </div>
+
+
+  <!-- Final Content -->
+
+  <div class="cake-content">
+
+    <div class="final-kicker">
       You popped them all...
     </div>
 
-    <h2>
-      Your Birthday Cake ♡
-    </h2>
+    <div class="final-title">
+      Happy Birthday, Niki ♡
+    </div>
 
-    <p>
-      Make a wish, Niki ❤️.
-    </p>
+    <div class="final-subtitle">
+      Your Birthday Cake 🎂
+    </div>
+
+
+    <!-- Cake -->
 
     <div class="cake">
 
       <div class="candle">
+
         <div class="flame"></div>
+
       </div>
 
       <div class="top"></div>
+
       <div class="base"></div>
 
     </div>
 
+
+    <!-- Final Birthday Message -->
+
+    <div class="final-message">
+
+      Many more happy returns of the day, Niki! ❤️
+
+      <br><br>
+
+      I genuinely wish you a beautiful, happy and peaceful life —
+      a life filled with all the little moments, dreams and happiness
+      you’ve always wished for.
+
+      <br><br>
+
+      May you always have reasons to smile, people who truly care for you,
+      and the strength to achieve everything you dream of.
+
+      Wishing you all the happiness you deserve.
+
+      Keep smiling and keep being the beautiful person you are.
+
+    </div>
+
+
+    <div class="final-sign">
+      Take care, Niki. 🤗❤️
+    </div>
+
   </div>
+
 </section>
 
 
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
 <script>
+
+
+/* =========================
+   BALLOON MESSAGES
+========================= */
 
 const msgs=[
 
-["The Day I Met You",
-"June 20th, 7:10 PM — a moment I never knew I would remember this much. ❤️"],
+  [
+    "The Day I Met You",
+    "June 20th, 7:10 PM — a moment I never knew I would remember this much. ❤️"
+  ],
 
-["That First Conversation",
-"Somehow, talking to you felt so natural and comfortable. It honestly felt like we weren't meeting for the first time."],
+  [
+    "That First Conversation",
+    "Somehow, talking to you felt so natural and comfortable. It honestly felt like we weren't meeting for the first time."
+  ],
 
-["Just Go With The Flow",
-"When you said “Just go with the flow” twice, I was genuinely surprised… because that was exactly what I had been thinking of saying. ❤️"],
+  [
+    "Just Go With The Flow",
+    "When you said “Just go with the flow” twice, I was genuinely surprised… because that was exactly what I had been thinking of saying. ❤️"
+  ],
 
-["The Little Things",
-"I’ve always loved the little moments in life. Somehow, the little things we spoke about that day became memories I still cherish."],
+  [
+    "The Little Things",
+    "I’ve always loved the little moments in life. Somehow, the little things we spoke about that day became memories I still cherish."
+  ],
 
-["A Genuine Connection",
-"I never expected to feel such a genuine connection from just one meeting. But with you, everything felt effortless and real."],
+  [
+    "A Genuine Connection",
+    "I never expected to feel such a genuine connection from just one meeting. But with you, everything felt effortless and real."
+  ],
 
-["What I Admired",
-"The way you spoke about your parents, your responsibilities and the simple life you wanted made me respect you even more."],
+  [
+    "What I Admired",
+    "The way you spoke about your parents, your responsibilities and the simple life you wanted made me respect you even more."
+  ],
 
-["The Answer I Hoped For",
-"After meeting you, I honestly felt, “Maybe she is the one.” I remember waiting for Sunday and quietly hoping for a YES. ❤️"],
+  [
+    "The Answer I Hoped For",
+    "After meeting you, I honestly felt, “Maybe she is the one.” I remember waiting for Sunday and quietly hoping for a YES. ❤️"
+  ],
 
-["One Last Thing...",
-"You may not know how special that first meeting became for me. I went there expecting to meet someone through a marriage proposal, but I came back feeling something I never expected — that you could be the one I’d want to make a part of my life, share all the little moments with, and build a happy life together. Happy Birthday, Niki. Stay the beautiful person you are. 🤗❤️"]
+  [
+    "One Last Thing...",
+    "You may not know how special that first meeting became for me. I went there expecting to meet someone through a marriage proposal, but I came back feeling something I never expected — that you could be the one I’d want to make a part of my life, share all the little moments with, and build a happy life together. Happy Birthday, Niki. Stay the beautiful person you are. 🤗❤️"
+  ]
 
 ];
 
-const gift=document.getElementById("gift"),
-      bs=document.getElementById("balloons"),
-      cake=document.getElementById("cake"),
-      field=document.getElementById("field"),
-      modal=document.getElementById("modal");
 
-let opened=false,
-    popped=0;
+/* =========================
+   ELEMENTS
+========================= */
+
+const gift =
+  document.getElementById("gift");
+
+const bs =
+  document.getElementById("balloons");
+
+const cake =
+  document.getElementById("cake");
+
+const field =
+  document.getElementById("field");
+
+const modal =
+  document.getElementById("modal");
+
+
+let opened=false;
+let popped=0;
+
+
+/* =========================
+   OPEN GIFT
+========================= */
 
 new IntersectionObserver(
+
   es=>es.forEach(e=>{
-    if(e.isIntersecting&&!opened){
+
+    if(
+      e.isIntersecting &&
+      !opened
+    ){
 
       opened=true;
+
       gift.classList.add("open");
 
+
       setTimeout(()=>{
+
         bs.classList.add("show");
+
         createBalloons();
-        bs.scrollIntoView({behavior:"smooth"});
-      },1000)
+
+        bs.scrollIntoView({
+          behavior:"smooth"
+        });
+
+      },1000);
 
     }
-  }),
-  {threshold:.65}
-).observe(document.getElementById("giftSection"));
 
+  }),
+
+  {
+    threshold:.65
+  }
+
+).observe(
+  document.getElementById("giftSection")
+);
+
+
+/* =========================
+   CREATE BALLOONS
+========================= */
 
 function createBalloons(){
 
   const pos=[
+
     [8,10],
     [25,2],
     [43,14],
@@ -500,18 +1195,28 @@ function createBalloons(){
     [15,53],
     [47,55],
     [76,52]
+
   ];
+
 
   msgs.forEach((m,i)=>{
 
-    let b=document.createElement("button");
+    let b=
+      document.createElement("button");
+
 
     b.className="balloon";
 
-    b.style.left=pos[i][0]+"%";
-    b.style.top=pos[i][1]+"%";
+
+    b.style.left=
+      pos[i][0]+"%";
+
+    b.style.top=
+      pos[i][1]+"%";
+
 
     b.style.background=[
+
       "#ed94ad",
       "#c99be8",
       "#efb46f",
@@ -520,38 +1225,73 @@ function createBalloons(){
       "#b99be0",
       "#e5b7ca",
       "#e8c486"
+
     ][i];
 
-    b.style.animationDelay=(-i*.3)+"s";
+
+    b.style.animationDelay=
+      (-i*.3)+"s";
+
 
     b.onclick=()=>{
 
-      if(b.classList.contains("popping")) return;
+      if(
+        b.classList.contains("popping")
+      ){
+        return;
+      }
+
 
       b.classList.add("popping");
 
+
       popped++;
 
-      document.getElementById("count").textContent=
+
+      document.getElementById(
+        "count"
+      ).textContent=
         popped+" / 8 popped";
 
-      document.getElementById("mt").textContent=m[0];
-      document.getElementById("mx").textContent=m[1];
+
+      document.getElementById(
+        "mt"
+      ).textContent=
+        m[0];
+
+
+      document.getElementById(
+        "mx"
+      ).textContent=
+        m[1];
+
 
       modal.classList.add("show");
 
+
       setTimeout(()=>{
+
         b.remove();
+
       },350);
 
-      if(popped===8)
+
+      if(popped===8){
 
         setTimeout(()=>{
+
           cake.classList.add("show");
-          cake.scrollIntoView({behavior:"smooth"});
+
+          cake.scrollIntoView({
+            behavior:"smooth"
+          });
+
         },1400);
 
+      }
+
     };
+
 
     field.appendChild(b);
 
